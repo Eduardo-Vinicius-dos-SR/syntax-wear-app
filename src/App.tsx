@@ -1,17 +1,18 @@
-import { Header } from "./components/Header"
-import { Hero } from "./components/Hero"
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { Categories } from "./components/Categories";
 
 function App() {
+	return (
+		<>
+			<Header />
 
-  return (
-    <>
-      <Header />
-
-      <main className="py-10">
-        <Hero />
-      </main>
-    </>
-  )
+			<main className="py-10">
+				<Hero />
+				<Categories />
+			</main>
+		</>
+	);
 }
 
-export default App
+export default App;
