@@ -1,0 +1,55 @@
+/* Estilos movidos de src/styles/globals.css */
+.galleryGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 300px);
+	grid-template-areas:
+		"highlight highlight sneaker-purple sneaker-purple"
+		"highlight highlight model sneaker-color"
+		"sneaker-white sneaker-white model sneaker-silver";
+	gap: 30px;
+}
+
+.area {
+	overflow: hidden;
+	border-radius: 0.75rem; /* rounded-lg */
+	background-color: var(--color-surface-alt);
+}
+
+.highlight {
+	grid-area: highlight;
+}
+.sneakerPurple {
+	grid-area: sneaker-purple;
+}
+.model {
+	grid-area: model;
+}
+.sneakerColor {
+	grid-area: sneaker-color;
+}
+.sneakerWhite {
+	grid-area: sneaker-white;
+}
+.sneakerSilver {
+	grid-area: sneaker-silver;
+}
+
+/* Mobile: stack items and change template areas/order as requested */
+@media (max-width: 768px) {
+	.galleryGrid {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(5, auto);
+		grid-template-areas:
+			"highlight highlight"
+			"sneaker-white sneaker-white"
+			"model sneaker-color"
+			"model sneaker-silver"
+			"sneaker-purple sneaker-purple";
+		gap: 16px;
+	}
+
+	.area img {
+		height: auto;
+	}
+}
