@@ -1,3 +1,6 @@
+import { Button } from "../Button";
+import { Overlay } from "../Overlay";
+
 import galeriaHomem from "../../assets/images/galeria-homem.jpg";
 import galeriaTenisRoxo from "../../assets/images/galeria-tenis-roxo.jpg";
 import galeriaModelo from "../../assets/images/galeria-modelo.jpg";
@@ -10,9 +13,13 @@ export const Gallery = () => {
 	return (
 		<section className="gallery-container container">
 			<div className={`${styles.galleryGrid} container`}>
-				{/* ordem conforme solicitado: 1 model homem, 2 tenis roxo, 3 modelo mulher, 4 tenis colorido, 5 tenis branco/preto, 6 tenis cinza */}
-				<div className={`gallery-item ${styles.highlight} ${styles.area}`}>
+				<div className={`gallery-item relative ${styles.highlight} ${styles.area}`}>
 					<img src={galeriaHomem} alt="modelo masculino" className="w-full h-full object-cover rounded-2xl" />
+
+					<Overlay title="Krypton One" subtitle="Estilo urbano com atitude" className="inset-0 justify-center">
+						<Button variant="secondary">Feminino</Button>
+						<Button variant="secondary">Masculino</Button>
+					</Overlay>
 				</div>
 				<div className={`gallery-item sneaker-purple ${styles.sneakerPurple} ${styles.area}`}>
 					<img src={galeriaTenisRoxo} alt="tenis roxo" className="w-full h-full object-cover rounded-2xl" />
