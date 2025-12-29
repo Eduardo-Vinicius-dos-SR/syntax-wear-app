@@ -13,15 +13,3 @@ function App() {
 }
 
 export default App;
-
-// <>
-// 			<Header />
-
-// 			<main className="py-10">
-// 				<Hero />
-// 				<Categories />
-// 				<Gallery />
-// 			</main>
-
-// 			<Footer></Footer>
-// 		</>
