@@ -11,8 +11,13 @@ export const ShoppingCart = () => {
 
 	return (
 		<>
-			<button className="cursor-pointer" onClick={() => setCartIsOpen(!cartIsOpen)}>
+			<button className="relative cursor-pointer" onClick={() => setCartIsOpen(!cartIsOpen)}>
 				<img src={IconCart} alt="Ícone carrinho de compras" />
+				{cart.length > 0 && (
+					<span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex justify-center items-center">
+						{cart.length}
+					</span>
+				)}
 			</button>
 
 			<div

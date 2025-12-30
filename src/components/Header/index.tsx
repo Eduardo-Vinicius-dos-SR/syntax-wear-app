@@ -46,10 +46,6 @@ export const Header = () => {
 								</a>
 							</li>
 							<li>
-								{/* <a href="#">
-                  <img src={IconCart} alt="Ícone de carrinho" />
-                </a> */}
-
 								<ShoppingCart />
 							</li>
 						</ul>

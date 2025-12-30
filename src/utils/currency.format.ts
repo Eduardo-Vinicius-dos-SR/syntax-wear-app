@@ -5,11 +5,6 @@ export type FormatCurrencyOptions = {
 	maximumFractionDigits?: number;
 };
 
-/**
- * Formata um valor como moeda.
- * Aceita number, string com número, ou null/undefined (retorna string vazia).
- * Padrões: locale = 'pt-BR', currency = 'BRL'.
- */
 export function formatCurrency(value: number | string | null | undefined, options: FormatCurrencyOptions = {}): string {
 	if (value === null || value === undefined || value === "") return "";
 
