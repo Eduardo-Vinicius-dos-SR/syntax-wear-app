@@ -4,17 +4,17 @@ import { Categories } from "../../components/Categories";
 import { Gallery } from "../../components/Gallery";
 
 export const Route = createFileRoute("/_app/")({
-  component: RouteComponent,
+	component: RouteComponent,
 });
 
 function RouteComponent() {
-  return (
-    <main className="py-10">
-      <Hero />
+	return (
+		<main className="py-6">
+			<Hero />
 
-      <Categories />
+			<Categories />
 
-      <Gallery />
-    </main>
-  );
+			<Gallery />
+		</main>
+	);
 }
