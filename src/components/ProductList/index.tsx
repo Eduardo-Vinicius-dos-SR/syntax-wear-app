@@ -1,13 +1,13 @@
-import type { Product } from "../../interfaces/product";
+import type { Product } from "../../pages/_app/products/category/product";
 import { ProductCard } from "../ProductCard";
 
-interface ProductCardProps {
+interface ProductListProps {
 	products: Product[];
 }
 
-export const ProductList = ({ products }: ProductCardProps) => {
+export const ProductList = ({ products }: ProductListProps) => {
 	return (
-		<section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] mb-10">
+		<section className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(350px,1fr))] xl:grid-cols-3 mb-10">
 			{products.map((product) => (
 				<ProductCard key={product.id} product={product} />
 			))}
