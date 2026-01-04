@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 ## Live Site
 
-- Live Site URL: [GitHub Pages](https://eduardo-vinicius-dos-sr.github.io/Social-proof-section/)
+- Live Site URL: [GitHub Pages](https://syntax-wear-app-1o1t.vercel.app)
 
 ## React Compiler
 
