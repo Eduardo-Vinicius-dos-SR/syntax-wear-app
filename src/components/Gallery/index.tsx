@@ -4,7 +4,7 @@ import galeriaModelo from "../../assets/images/galeria-modelo.jpg";
 import galeriaTenisColorido from "../../assets/images/galeria-tenis-colorido.jpg";
 import galeriaTenisBrancoPeto from "../../assets/images/galeria-tenis-branco-e-preto.jpg";
 import galeriaTenisCinza from "../../assets/images/galeria-tenis-cinza.jpg";
-import styles from "./Gallery.module.css";
+import styles from "./gallery.module.css";
 import { Overlay } from "../Overlay";
 import { Button } from "../Button";
 import { useRouter } from "@tanstack/react-router";
