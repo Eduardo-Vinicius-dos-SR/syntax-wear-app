@@ -6,6 +6,11 @@ import GoogleIcon from "@/assets/images/google-icon.png";
 
 export const Route = createFileRoute("/_auth/sign-up")({
 	component: RouteComponent,
+  head: ()=>({
+    meta: [
+      {title: "Cadastre-se - SyntaxWear"}
+    ]
+  })
 });
 
 function RouteComponent() {
@@ -22,9 +27,9 @@ function RouteComponent() {
 				</button>
 
 				<p className="text-sm text-gray-600 mt-6 text-center">
-					Já tem uma conta?
-					<a href="/sign-in" className="text-[#5433EB] hover:underline">
-						Entrar
+					Já tem uma conta? 
+					<a href="/sign-in" className="text-[#5433EB] hover:underline ml-2">
+						 Entrar
 					</a>
 				</p>
 			</div>
