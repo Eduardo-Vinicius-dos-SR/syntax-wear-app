@@ -46,7 +46,7 @@ export const Header = () => {
 							<li className="hidden lg:block">
 								<Link to="/about">Sobre</Link>
 							</li>
-							<li className="lg:hidden">
+							<li className="lg:hidden h-6">
 								<MenuMobile navLinks={navLinks} />
 							</li>
 							<li className="hidden lg:block">
