@@ -12,10 +12,15 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
 
 	return (
 		<>
+			{/* Overlay */}
 			<div
 				className={`${isOpen ? "bg-black/70 visible" : "bg-transparent invisible"} text-black fixed inset-0 z-50 transition-all duration-600 ease-in-out`}
 				onClick={onClose}
 			>
+				{/* Drawer
+					translate-x-0 - posição normal da drawer
+					translate-x-full - fora da tela (para a direita)
+			  */}
 				<div
 					className={`${isOpen ? "translate-x-0" : "translate-x-full"} absolute top-0 right-0 bottom-0 bg-white pt-6 transition-all duration-500 ease-in-out w-75 md:w-100`}
 					onClick={(e) => e.stopPropagation()}

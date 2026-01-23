@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import type { Product } from "../pages/_app/products/category/product";
 import { CartContext } from "./CartContext";
+import type { Product } from "../interfaces/product";
 
 interface CartProviderProps {
 	children: React.ReactNode;
@@ -30,7 +30,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
 		if (productExistsInCart) {
 			newCart = cart.map((itemInCart) =>
-				itemInCart.id === product.id ? { ...itemInCart, quantity: itemInCart.quantity + 1 } : itemInCart
+				itemInCart.id === product.id ? { ...itemInCart, quantity: itemInCart.quantity + 1 } : itemInCart,
 			);
 		} else {
 			newCart = [...cart, { ...product, quantity: 1 }];
@@ -59,7 +59,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 		if (!productExistsInCart) return;
 
 		const newCart = cart.map((itemInCart) =>
-			itemInCart.id === product.id ? { ...itemInCart, quantity: newQuantity } : itemInCart
+			itemInCart.id === product.id ? { ...itemInCart, quantity: newQuantity } : itemInCart,
 		);
 
 		setCart(newCart);
