@@ -10,4 +10,5 @@ export interface Product {
 	active: boolean;
 	color: string;
 	description: string;
+	category: Category;
 }
