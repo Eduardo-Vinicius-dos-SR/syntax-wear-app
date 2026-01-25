@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { CartContext } from "../../contexts/CartContext";
 import { formatCurrency } from "../../utils/currency.format";
+import { CartContext } from "../../contexts/CartContext/CartContext";
 
 interface CartDrawerProps {
 	isOpen: boolean;
