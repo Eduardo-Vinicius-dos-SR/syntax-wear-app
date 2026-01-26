@@ -59,8 +59,37 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	async function register(data: RegisterInput): Promise<void> {}
 
 	async function signOut(): Promise<void> {
-		setUser(null);
-		setIsAuthenticated(false);
+		try {
+			await fetch("http://localhost:3000/auth/signout", {
+				method: "POST",
+				credentials: "include",
+			});
+
+			setUser(null);
+			setIsAuthenticated(false);
+		} catch (error) {
+			console.error("Erro ao fazer logout:", error);
+		}
+	}
+
+	async function signInWithGoogle(credential: string): Promise<void> {
+		const response = await fetch("http://localhost:3000/auth/google", {
+			method: "POST",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ credential }),
+		});
+
+		const result = await response.json();
+
+		if (!response.ok || !result.user) {
+			throw new Error(result.message || "Erro ao fazer login com Google");
+		}
+
+		setUser(result.user);
+		setIsAuthenticated(true);
 	}
 
 	const value = {
@@ -69,6 +98,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 		signIn,
 		register,
 		signOut,
+		signInWithGoogle,
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
