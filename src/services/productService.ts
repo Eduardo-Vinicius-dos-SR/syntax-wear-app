@@ -1,6 +1,7 @@
+import { notFound } from "@tanstack/react-router";
 import type { Product } from "../interfaces/product";
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://syntax-wear-api-m499.onrender.com";
 const DEFAULT_LIMIT = 3;
 
 interface GetProductParams {
@@ -49,6 +50,16 @@ export async function getProductByCategoryId(
 
 	if (!response.ok) {
 		throw new Error(`Erro ao buscar produtos por categoria: ${response.statusText}`);
+	}
+
+	return await response.json();
+}
+
+export async function getProductDetailById(id: string): Promise<Product | null> {
+	const response = await fetch(`https://syntax-wear-api-m499.onrender.com/products/${id}`);
+
+	if (!response.ok) {
+		throw notFound();
 	}
 
 	return await response.json();

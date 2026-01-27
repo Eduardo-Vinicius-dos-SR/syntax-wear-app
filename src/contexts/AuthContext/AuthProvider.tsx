@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	useEffect(() => {
 		const fetchUserProfile = async () => {
 			try {
-				const response = await fetch("http://localhost:3000/auth/profile", {
+				const response = await fetch("https://syntax-wear-api-m499.onrender.com/auth/profile", {
 					method: "GET",
 					credentials: "include",
 				});
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	}, []);
 
 	async function signIn(credentials: Credentials): Promise<void> {
-		const response = await fetch("http://localhost:3000/auth/login", {
+		const response = await fetch("https://syntax-wear-api-m499.onrender.com/auth/login", {
 			method: "POST",
 			credentials: "include", // faz com que os cookies sejam enviados junto com a requisição
 			headers: {
@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	}
 
 	async function signUp(data: RegisterInput): Promise<void> {
-		const response = await fetch("http://localhost:3000/auth/register", {
+		const response = await fetch("https://syntax-wear-api-m499.onrender.com/auth/register", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -77,7 +77,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
 	async function signOut(): Promise<void> {
 		try {
-			await fetch("http://localhost:3000/auth/signout", {
+			await fetch("https://syntax-wear-api-m499.onrender.com/auth/signout", {
 				method: "POST",
 				credentials: "include",
 			});
@@ -90,7 +90,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	}
 
 	async function signInWithGoogle(credential: string): Promise<void> {
-		const response = await fetch("http://localhost:3000/auth/google", {
+		const response = await fetch("https://syntax-wear-api-m499.onrender.com/auth/google", {
 			method: "POST",
 			credentials: "include",
 			headers: {
