@@ -67,8 +67,6 @@ export const LoginForm = () => {
 
 			{errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
 
-			{error && <span className="text-red-500 text-sm text-center">{error}</span>}
-
 			<button
 				type="submit"
 				disabled={isSubmitting}
@@ -76,6 +74,8 @@ export const LoginForm = () => {
 			>
 				{isSubmitting ? "Enviando ..." : "Continuar"}
 			</button>
+
+			{error && <span className="text-red-500 text-sm text-center">{error}</span>}
 		</form>
 	);
 };

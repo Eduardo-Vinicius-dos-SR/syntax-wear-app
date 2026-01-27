@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { products } from "../../../mocks/products";
 import { formatCurrency } from "../../../utils/currency.format";
-import { CartContext } from "../../../contexts/CartContext";
 import { useContext } from "react";
 import { CEPForm } from "../../../components/CEPForm";
+import { CartContext } from "../../../contexts/CartContext/CartContext";
 
 export const Route = createFileRoute("/_app/products/$productId")({
 	component: RouteComponent,
